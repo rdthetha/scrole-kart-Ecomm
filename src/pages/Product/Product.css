@@ -1,0 +1,157 @@
+.ec-product-container {
+
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    position: relative;
+}
+
+.ec-side-navbar {
+
+    background-color: var(--ec-secondary-background);
+
+}
+
+/*SLIDER CSS */
+
+.min-max label {
+    font-size: 1rem;
+    float: left;
+    margin-right: 5px;
+    line-height: 1.6;
+}
+
+.min {
+    float: left;
+}
+
+.max {
+    float: right;
+}
+
+.min-max {
+    width: 90%;
+    max-width: 12rem;
+    margin: 0 auto;
+    padding: 1.5rem 0px 1rem 0px;
+}
+
+.min-max span {
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    width: 3rem;
+    border: 1px solid var(--ec-primary-color);
+}
+
+.min-max-range {
+    padding: 2rem 0px 1.5rem 0px;
+}
+
+.range {
+   
+    appearance: none;
+    width: 50%;
+    height: 0.4rem;
+    max-width: 24rem;
+    background-color: var(--primary-white);
+    margin: 0;
+    padding: 0;
+    outline: none;
+    float: left;
+}
+
+/*SLIDER CSS ENDS*/
+.ec-product-filter {
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+
+}
+
+.ec-first-element-side-navbar {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ec-product-content {
+
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+}
+
+
+.card-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 32rem;
+    min-width: 20rem;
+    background-color: var(--ec-secondary-background);
+}
+
+.img-contain>img {
+
+    height: 15rem;
+}
+
+.btn-icon {
+
+    color: var(--primary-dark-red);
+}
+
+.card-details {
+
+    padding: 0.2rem 0.6rem;
+}
+
+.btn-primary {
+
+    margin-top: 1rem;
+}
+
+.ec-navbar-wrapper {
+
+    margin-bottom: 0rem;
+}
+
+.ec-price-detail {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: wheat;
+    border-radius: 1rem;
+
+}
+
+.btn-card-details {
+    margin-top: 0rem;
+}
+
+.price-discount {
+
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark-red);
+}
+
+
+
+
+.category-label{
+
+    display: block;
+}
