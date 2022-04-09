@@ -12,11 +12,6 @@ function App() {
             <Route path="/"  element={<LandingPage/>} />
             <Route path="/ProductPage"  element={<Product/>} />
             <Route path="/test"  element={<ProductCard/>} />
-            {/* <Route path="/cartPage"  element={<CartPage />} />
-            <Route path="/wishlistPage"  element={<WishlistPage />} />
-            <Route path="/loginPage"  element={<LoginPage />} />
-            <Route path="/signupPage"  element={<SingupPage />} />
-            <Route path="/logoutPage"  element={<LogoutPage />} /> */}
        </Routes> 
        </div>
   );

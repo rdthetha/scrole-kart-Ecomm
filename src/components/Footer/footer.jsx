@@ -5,16 +5,16 @@ export default function Footer(){
     return(
 
         <div>
-            <div class="footer-container">
-        <div class="footer-inner">
-            <div class="footer-icon">
+            <div className="footer-container">
+        <div className="footer-inner">
+            <div className="footer-icon">
                 <img src={logo} alt="logo" />
             </div>
-            <div class="footer-content">
-                <ul class="footer-link">
-                    <a class="footer-link" href="">Refund Policy</a>
-                    <a class="footer-link" href="">Shipping Policy</a>
-                    <a class="footer-link" href="">Terms and condition</a>
+            <div className="footer-content">
+                <ul className="footer-link">
+                    <a className="footer-link">Refund Policy</a>
+                    <a className="footer-link">Shipping Policy</a>
+                    <a className="footer-link">Terms and condition</a>
                 </ul>
             </div>
         </div>
