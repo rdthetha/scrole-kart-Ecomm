@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://kind-agnesi-dfedbe.netlify.app/component.css');
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+:root {
+
+    --ec-primary-color: #003B4A;
+    --ec-secondary-background: #b4d7d9ad;
+}
+
+body {
+
+    background-color: var(--primary-compliment);
+    font-family: 'Poppins', sans-serif;
+    color: var(--ec-primary-color);
+}
+
+a {
+    color: var(--ec-primary-color);
+    font-size: 1rem;
+}
+
+.ec-main-icon {
+
+    width: 10rem;
+    cursor: pointer;
+}
+
+.ec-first-container {
+    max-width: 100rem;
+
+}
+.cart-icons{
+
+    font-size: 1.5rem;
+}
+.ec-navbar-wrapper {
+
+    display: flex;
+    align-items: center;
+    padding-inline-end: 1.5rem;
+    color: var(--ec-primary-color);
+    margin-bottom: 1rem;
+    padding: 2rem 5rem;
+    background-color: var(--primary-white);
+
+}
+
+.ec-navbar {
+
+    flex: 1;
+    text-align: right;
+    padding: 1rem;
+
+}
+
+.ec-nav-link {
+
+    display: inline-block;
+    list-style-type: none;
+    color: var(--ec-primary-color);
+
+}
+
+.ec-nav-link li {
+
+    display: inline-block;
+    color: var(--ec-primary-color);
+    margin-right: 1rem;
+}
+
+.ec-input {
+
+    margin-right: 4rem;
+    padding: 0.7rem;
+    border: 0.15rem solid var(--ec-primary-color);
+}
+
+.first-section {
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.landing-content {
+
+    flex-basis: 40%;
+    min-height: 20rem;
+}
+
+.landing-image {
+
+    flex-basis: 60%;
+    min-height: 20rem;
+}
+
+.landing-image img {
+
+    max-width: 100%;
+    padding: 3rem 0;
+
+}
+
+.btn-primary {
+
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-secondary {
+
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-category {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+
+}
+
+.btn-category {
+
+    min-width: 10rem;
+}
+
+.small-text {
+
+    margin-top: 1rem;
+}
+
+.product-section {
+
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--ec-secondary-background);
+
+}
+
+.card-details {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.img-contain img {
+
+    width: 14rem;
+}
+
+.head-text {
+
+    margin: 3rem 0rem;
+}
+
+.footer-inner {
+    height: 10rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-icon {
+
+    width: 30%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.footer-icon img {
+
+    width: 15rem;
+    height: auto;
+}
+
+.first-section {
+
+    padding: 0rem 5rem;
+}
+
+.footer-link {
+
+    margin: 0rem 2rem;
+}
+
+.ec-head-text{
+
+    margin-top: 1rem;
+}

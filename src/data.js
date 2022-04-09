@@ -1,16 +1,17 @@
-import img1 from './image/run-shoes'
-import img2 from './image/run-shoes-2'
-import img3 from './image/cricket-shoe'
-import img4 from './image/cricket-shoe-2'
-import img5 from './image/indoor-shoe'
-import img6 from './image/indoor-shoe-2'
+import img1 from './image/run-shoes.jpg'
+import img2 from './image/run-shoes-2.jpg'
+import img3 from './image/cricket-shoe.jpg'
+import img4 from './image/cricket-shoe-2.jpg'
+import img5 from './image/indoor-shoe.jpg'
+import img6 from './image/indoor-shoe-2.jpg'
 
-export const data = [
+export const DataTest = [
     {
       id: 1,
       img: img1,
-      productBrand: "V1 Running Shoes",
-      productDetail: "Cricket shoes with excellent grip and cushioning!",
+      category:"RunningShoes",
+      Brand: "V1 Running Shoes",
+      Detail: "Cricket shoes with excellent grip!",
       originalPrice: 5000,
       price: 4000,
       discount: 20,
@@ -21,8 +22,9 @@ export const data = [
     {
       id: 2,
       img: img2,
-      productBrand: "S2 Running Shoes",
-      productDetail: "Shoes with high stabilty!",
+      category:"RunningShoes",
+      Brand: "S2 Running Shoes",
+      Detail: "Shoes with high stabilty!",
       originalPrice: 6000,
       price: 5400,
       discount: 10,
@@ -33,25 +35,27 @@ export const data = [
     {
       id: 3,
       img: img3,
-      productBrand: "A1 Cricket shoes",
-      productDetail: "Performance in the game!",
+      category:"CricketShoes",
+      Brand: "A1 Cricket shoes",
+      Detail: "Performance in the game!",
       originalPrice: 4000,
       price: 3600,
       discount: 10,
       ratings: 4.9,
       inStock: true,
-      fastDelivery: false
+      fastDelivery: true
     }
     ,
     {
       id: 4,
       img: img4,
-      productBrand: "A7 Cricket Shoes",
-      productDetail: "Stabilty and Versatile!",
+      category:"CricketShoes",
+      Brand: "A7 Cricket Shoes",
+      Detail: "Stabilty and Versatile!",
       originalPrice: 6900,
       price: 5000,
       discount: 20,
-      ratings: 4.4,
+      ratings: 2.4,
       inStock: false,
       fastDelivery: true
     }
@@ -59,12 +63,13 @@ export const data = [
     {
       id: 5,
       img: img5,
-      productBrand: "E4 Indoor Shoes",
-      productDetail: "Great indoor performance!",
+      category:"IndoorShoes",
+      Brand: "E4 Indoor Shoes",
+      Detail: "Great indoor performance!",
       originalPrice: 6000,
       price: 4800,
       discount: 20,
-      ratings: 4.9,
+      ratings: 3.9,
       inStock: true,
       fastDelivery: true
     }
@@ -72,12 +77,13 @@ export const data = [
     {
       id: 6,
       img: img6,
-      productBrand: "M10 Indoor Shoes",
-      productDetail: "Great for indoor activities!",
+      category:"IndoorShoes",
+      Brand: "M10 Indoor Shoes",
+      Detail: "Great for indoor activities!",
       originalPrice: 3000,
       price: 2700,
       discount: 10,
-      ratings: 4.1,
+      ratings: 3.1,
       inStock: true,
       fastDelivery: false
     }
