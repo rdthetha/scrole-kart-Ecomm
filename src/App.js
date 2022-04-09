@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route,Routes } from 'react-router-dom';
 import ProductCard from './components/Card/ProductCard';
-import LandingPage from './pages/Landing-Page/LandingPage';
+import LandingPage from './pages/Home/LandingPage';
 import Product from './pages/Product/Product';
 
 
