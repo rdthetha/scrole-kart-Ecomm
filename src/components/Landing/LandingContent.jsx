@@ -7,60 +7,60 @@ import landingimg from '../../image/shoe-final.png'
 export default function LandingContent() {
 return (
 <div>
-    <div class="first-section">
-        <div class="landing-content">
-            <div class="h3">Welcome to ScroleKart! <br />Best Deals on shoes round the year!</div>
-            <div class="small-text">Exclusive collection</div>
-            <Link to='/ProductPage'><button class="btn-primary btn-outline-primary">Explore
+    <div className="first-section">
+        <div className="landing-content">
+            <div className="h3">Welcome to ScroleKart! <br />Best Deals on shoes round the year!</div>
+            <div className="small-text">Exclusive collection</div>
+            <Link to='/ProductPage'><button className="btn-primary btn-outline-primary">Explore
                     Now!</button></Link>
             
         </div>
-        <div class="landing-image">
+        <div className="landing-image">
             <img src={landingimg} alt="" />
         </div>
     </div>
 
-    <div class="center-text h2 head-text">Our product categories!</div>
-    <div class="product-section">
-        <div class="card-container-horizontal">
-            <div class="img-contain">
+    <div className="center-text h2 head-text">Our product categories!</div>
+    <div className="product-section">
+        <div className="card-container-horizontal">
+            <div className="img-contain">
                 <img src={img2} alt="shoes" />
             </div>
-            <div class="card-detail-horizontal">
-                <div class="card-details">
-                    <span class="tag">Thunder Blue</span>
-                    <span class="tag">Summer collection</span>
-                    <div class="name">Running Shoes</div>
-                    <div class="small-text">Featuring a lower-profile external heel counter, this piece cradles your
+            <div className="card-detail-horizontal">
+                <div className="card-details">
+                    <span className="tag">Thunder Blue</span>
+                    <span className="tag">Summer collection</span>
+                    <div className="name">Running Shoes</div>
+                    <div className="small-text">Featuring a lower-profile external heel counter, this piece cradles your
                         foot with improved rearfoot support .</div>
                 </div>
             </div>
         </div>
 
-        <div class="card-container-horizontal">
-            <div class="img-contain">
+        <div className="card-container-horizontal">
+            <div className="img-contain">
                 <img src={img3} alt="shoes" />
             </div>
-            <div class="card-detail-horizontal">
-                <div class="card-details">
-                    <span class="tag">Pure Black</span>
-                    <span class="tag">Winter collection</span>
-                    <div class="name">Indoor Shoes</div>
-                    <div class="small-text">An EVA midsole and sockliner make for a comfortable in-play experience,
+            <div className="card-detail-horizontal">
+                <div className="card-details">
+                    <span className="tag">Pure Black</span>
+                    <span className="tag">Winter collection</span>
+                    <div className="name">Indoor Shoes</div>
+                    <div className="small-text">An EVA midsole and sockliner make for a comfortable in-play experience,
                         while also providing excellent rebound .</div>
                 </div>
             </div>
         </div>
-        <div class="card-container-horizontal">
-            <div class="img-contain">
+        <div className="card-container-horizontal">
+            <div className="img-contain">
                 <img src={img1} alt="shoes" />
             </div>
-            <div class="card-detail-horizontal">
-                <div class="card-details">
-                    <span class="tag">Pure White</span>
-                    <span class="tag">Exclusive collection</span>
-                    <div class="name">Cricket Shoes</div>
-                    <div class="small-text">An EVA midsole and sockliner make for a comfortable in-play experience,
+            <div className="card-detail-horizontal">
+                <div className="card-details">
+                    <span className="tag">Pure White</span>
+                    <span className="tag">Exclusive collection</span>
+                    <div className="name">Cricket Shoes</div>
+                    <div className="small-text">An EVA midsole and sockliner make for a comfortable in-play experience,
                         while also providing excellent rebound.</div>
                 </div>
             </div>

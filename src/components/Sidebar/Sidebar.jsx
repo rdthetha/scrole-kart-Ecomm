@@ -1,15 +1,25 @@
-import React ,{useReducer} from 'react'
 import { useProduct } from '../../context/filterContext';
+import { Link } from 'react-router-dom'
 export default function Sidebar() {
 const { state, dispatch } = useProduct();
 const {sortBy,showInventoryAll,showFastDelivery,showCategory,showRating}=state
+
+const categoryHandler=(e)=>{
+const check = e.target.checked;
+const category = e.target.value;
+if (check) {
+return { type: "ADD_CATEGORY", payload: category };
+} else {
+return { type: "DELETE_CATEGORY", payload: category };
+}
+};
 return (
 <div className="ec-side-navbar">
     <div className="ec-product-filter">
-
         <div className="ec-first-element-side-navbar">
             <div className="h3">Filters</div>
-            <a className="h5 italic-text" href="">Clear!</a>
+            <Link to='/ProductPage' onClick={()=> {
+            dispatch({ type: "FILTER_CLEAR"})}}>Clear</Link>
         </div>
         <div className='h5'>Price: </div>
         <input type="range" max={10000} step={1000} defaultValue={5000} onChange={(event)=>
@@ -41,16 +51,18 @@ return (
 
         <div className="h5">Category:</div>
         <div>
-            <label className='category-label'><input onChange={()=> {
-                dispatch({ type: "TOGGLE_CATEGORY", payload: "RunningShoes" });
-                }}
-                checked={showCategory && showCategory === "RunningShoes"} type="checkbox" />Running Shoes</label>
-            <label className='category-label'><input onChange={()=> {
-                dispatch({ type: "TOGGLE_CATEGORY", payload: "CricketShoes" });
-                }}
-                checked={showCategory && showCategory === "CricketShoes"} type="checkbox" />Cricket Shoes</label>
-            <label className='category-label'><input type="checkbox" />Indoor Shoes</label>
-            <label className='category-label'><input type="checkbox" />Gym Shoes</label>
+            <label className='category-label'><input value="RunningShoes" onChange={(event)=>
+                dispatch(categoryHandler(event))}
+                type="checkbox" checked={showCategory.some((item)=>item==="RunningShoes")}/>Running Shoes</label>
+            <label className='category-label'><input value="CricketShoes" onChange={(event)=>
+                dispatch(categoryHandler(event))}
+                type="checkbox" checked={showCategory.some((item)=>item==="CricketShoes")}/>Cricket Shoes</label>
+            <label className='category-label'><input value="IndoorShoes" onChange={(event)=>
+                dispatch(categoryHandler(event))}
+                type="checkbox" checked={showCategory.some((item)=>item==="IndoorShoes")}/>Indoor Shoes</label>
+            <label className='category-label'><input value="GymShoes" onChange={(event)=>
+                dispatch(categoryHandler(event))}
+                type="checkbox" checked={showCategory.some((item)=>item==="GymShoes")}/>Gym Shoes</label>
         </div>
 
         <div className="h5">Rating:</div>

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { DataTest } from "../data";
-import {getSortedData,getFilteredData,getPriceRange,getRatings} from '../utility.js'
+import {getSortedData,getFilteredData,getPriceRange,getRatings,getCategory} from '../utility.js'
 const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
@@ -16,8 +16,19 @@ const ProductProvider = ({ children }) => {
                 return { ...state, showInventoryAll: !state.showInventoryAll };
             case "TOGGLE_DELIVERY":
                 return { ...state, showFastDelivery: !state.showFastDelivery };
-            case "TOGGLE_CATEGORY":
-                return {...state,showBrand:[...state.showCategory,action.payload]};
+            case "ADD_CATEGORY":
+                return {...state,showCategory:[...state.showCategory,action.payload]};
+            case "DELETE_CATEGORY":
+                return {...state,showCategory:state.showCategory.filter((category)=>category!==action.payload)};
+            case "FILTER_CLEAR":
+                return {
+                  showInventoryAll: true,
+                  showFastDelivery: false,
+                  showCategory: [],
+                  showPrice:0,
+                  showRating:null,
+                  sortBy: null
+                }
             default:
                 return state;
         }
@@ -41,7 +52,8 @@ const optionData = getFilteredData(sortedData, {
     showInventoryAll
   });
 const priceData= getPriceRange(optionData,state)
-const filteredData= getRatings(priceData,state)
+const ratingData= getRatings(priceData,state)
+const filteredData=getCategory(ratingData,state)
   return (
     <ProductContext.Provider value={{ state, dispatch, filteredData }}>
       {children}

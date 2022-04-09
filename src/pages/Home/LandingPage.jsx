@@ -8,9 +8,9 @@ export default function LandingPage(){
 return(
 <>
     <div>
-        <div class="ec-first-container">
+        <div className="ec-first-container">
             <NavigationTop/>
-            <div class="button-category">
+            <div className="button-category">
             <Link to='/ProductPage'><button
                         class="btn-category btn-secondary btn-outline-secondary">Running</button></Link>
             <Link to='/ProductPage'><button
