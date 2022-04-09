@@ -34,7 +34,7 @@ const [state, dispatch] = useReducer(
       sortBy: null
     }
   );
-const { showInventoryAll, showFastDelivery, showCategory,sortBy }=state;
+const { showInventoryAll, showFastDelivery,sortBy }=state;
 const sortedData = getSortedData(DataTest, sortBy);
 const optionData = getFilteredData(sortedData, {
     showFastDelivery,
