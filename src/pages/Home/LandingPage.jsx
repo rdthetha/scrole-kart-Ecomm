@@ -12,15 +12,15 @@ return(
             <NavigationTop/>
             <div className="button-category">
             <Link to='/ProductPage'><button
-                        class="btn-category btn-secondary btn-outline-secondary">Running</button></Link>
+                        className="btn-category btn-secondary btn-outline-secondary">Running</button></Link>
             <Link to='/ProductPage'><button
-                        class="btn-category btn-secondary btn-outline-secondary">Cricket</button></Link>
+                        className="btn-category btn-secondary btn-outline-secondary">Cricket</button></Link>
             <Link to='/ProductPage'><button
-                        class="btn-category btn-secondary btn-outline-secondary">Indoor</button></Link>
+                        className="btn-category btn-secondary btn-outline-secondary">Indoor</button></Link>
             <Link to='/ProductPage'><button
-                        class="btn-category btn-secondary btn-outline-secondary">SALE</button></Link>
+                        className="btn-category btn-secondary btn-outline-secondary">SALE</button></Link>
             <Link to='/ProductPage'><button
-                        class="btn-category btn-secondary btn-outline-secondary">OFFERS</button></Link>
+                        className="btn-category btn-secondary btn-outline-secondary">OFFERS</button></Link>
             </div>
         </div>
        <LandingContent/>

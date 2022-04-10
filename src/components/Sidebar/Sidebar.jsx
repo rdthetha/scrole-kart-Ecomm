@@ -13,6 +13,10 @@ return { type: "ADD_CATEGORY", payload: category };
 return { type: "DELETE_CATEGORY", payload: category };
 }
 };
+
+const CheckedHandler=(category)=>{
+    return showCategory.some((item)=>item===category)
+}
 return (
 <div className="ec-side-navbar">
     <div className="ec-product-filter">
@@ -42,39 +46,45 @@ return (
 
         <div className="h5">Option:</div>
         <div>
-            <label className='category-label'><input type="checkbox" checked={showInventoryAll} onChange={()=>
-                dispatch({ type: "TOGGLE_INVENTORY" })}/>Show out of Stock</label>
+            <label className='category-label'>
+                <input type="checkbox" checked={showInventoryAll} onChange={()=>dispatch({ type: "TOGGLE_INVENTORY" })}/>
+                Show out of Stock</label>
 
-            <label className='category-label'><input type="checkbox" checked={showFastDelivery} onChange={()=>
-                dispatch({ type: "TOGGLE_DELIVERY" })}/>Express Delivery</label>
+            <label className='category-label'>
+                <input type="checkbox" checked={showFastDelivery} onChange={()=>dispatch({ type: "TOGGLE_DELIVERY" })}/>
+                Express Delivery</label>
         </div>
 
         <div className="h5">Category:</div>
         <div>
-            <label className='category-label'><input value="RunningShoes" onChange={(event)=>
-                dispatch(categoryHandler(event))}
-                type="checkbox" checked={showCategory.some((item)=>item==="RunningShoes")}/>Running Shoes</label>
-            <label className='category-label'><input value="CricketShoes" onChange={(event)=>
-                dispatch(categoryHandler(event))}
-                type="checkbox" checked={showCategory.some((item)=>item==="CricketShoes")}/>Cricket Shoes</label>
-            <label className='category-label'><input value="IndoorShoes" onChange={(event)=>
-                dispatch(categoryHandler(event))}
-                type="checkbox" checked={showCategory.some((item)=>item==="IndoorShoes")}/>Indoor Shoes</label>
-            <label className='category-label'><input value="GymShoes" onChange={(event)=>
-                dispatch(categoryHandler(event))}
-                type="checkbox" checked={showCategory.some((item)=>item==="GymShoes")}/>Gym Shoes</label>
+            <label className='category-label'>
+                <input value="RunningShoes" onChange={(event)=>dispatch(categoryHandler(event))}
+                type="checkbox" checked={CheckedHandler("RunningShoes")}/>Running Shoes
+            </label>
+            <label className='category-label'>
+                <input value="CricketShoes" onChange={(event)=>dispatch(categoryHandler(event))}
+                type="checkbox" checked={CheckedHandler("CricketShoes")}/>Cricket Shoes
+            </label>
+            <label className='category-label'>
+                <input value="IndoorShoes" onChange={(event)=>dispatch(categoryHandler(event))}
+                type="checkbox" checked={CheckedHandler("IndoorShoes")}/>Indoor Shoes
+            </label>
+            <label className='category-label'>
+                <input value="GymShoes" onChange={(event)=>dispatch(categoryHandler(event))}
+                type="checkbox" checked={CheckedHandler("GymShoes")}/>Gym Shoes
+            </label>
         </div>
 
         <div className="h5">Rating:</div>
         <div className="ec-radio">
-            <label className='category-label'><input type="radio" onChange={()=> dispatch({
-                type:"FILTER_BY_RATING",payload: "RATING_FOUR" })}
+            <label className='category-label'>
+                <input type="radio" onChange={()=> dispatch({type:"FILTER_BY_RATING",payload: "RATING_FOUR" })}
                 checked={showRating && showRating === "RATING_FOUR"}/>4 star & above</label>
-            <label className='category-label'><input type="radio" onChange={()=> dispatch({
-                type:"FILTER_BY_RATING",payload: "RATING_THREE" })}
+            <label className='category-label'>
+                <input type="radio" onChange={()=> dispatch({type:"FILTER_BY_RATING",payload: "RATING_THREE" })}
                 checked={showRating && showRating === "RATING_THREE"}/>3 star & above</label>
-            <label className='category-label'><input type="radio" onChange={()=> dispatch({
-                type:"FILTER_BY_RATING",payload: "RATING_TWO" })}
+            <label className='category-label'>
+                <input type="radio" onChange={()=> dispatch({type:"FILTER_BY_RATING",payload: "RATING_TWO" })}
                 checked={showRating && showRating === "RATING_TWO"}/>2 star & above</label>
         </div>
     </div>

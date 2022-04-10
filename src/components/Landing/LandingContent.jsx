@@ -16,7 +16,7 @@ return (
             
         </div>
         <div className="landing-image">
-            <img src={landingimg} alt="" />
+            <img src={landingimg} alt="landing-page-img" />
         </div>
     </div>
 
