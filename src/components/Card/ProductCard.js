@@ -1,8 +1,10 @@
 import React from 'react'
 import { useProduct } from '../../context/filterContext'
-export default function ProductCard() {
+import { useCart } from '../../context/cartContext';
 
-  const {filteredData}=useProduct(); 
+export default function ProductCard() {
+  const{state:{cart},dispatch}=useCart();
+  const {filteredData}=useProduct();
   return (
     <div className="ec-product-content">
       {filteredData.length===0 && <div className='h3'>No Results Found!!</div>}
@@ -24,11 +26,14 @@ export default function ProductCard() {
                <div className="italic-text h5">Price :&nbsp;</div>
                <div className="h6">Rs&nbsp;</div>
                <div className="omit-text h6">{item.originalPrice}</div>
-               <div className="h6">&nbsp;{item.price}</div>
-               <div className="small-text price-discount">-{item.discount}</div>
+               <div className="h5">&nbsp;{item.price}</div>
+               <div className="small-text price-discount">-{item.discount}%</div>
              </div>
              <div className="btn-card-details">
-               <button className="btn-primary btn-outline-primary btn-card">Add to cart</button>
+             {cart.some(p=>p.id===item.id)?
+             (<button onClick={()=>dispatch({type:"DELETE_FROM_CART",payload:item})}className="btn-primary btn-outline-secondary btn-card">Remove</button>):
+
+             (<button onClick={()=>dispatch({type:"ADD_TO_CART",payload:item})}className="btn-primary btn-outline-primary btn-card">Add to cart</button>)}
                <button className="btn-primary btn-outline-secondary btn-card">Move to Wishlist</button>
                {/* <button className="btn-primary btn-outline-secondary btn-card btn-icon"><i
                    className="fa-solid fa-heart"></i></button> */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route,Routes } from 'react-router-dom';
-import ProductCard from './components/Card/ProductCard';
+import Cart from './pages/Cart/Cart';
 import LandingPage from './pages/Home/LandingPage';
 import Product from './pages/Product/Product';
 
@@ -11,7 +11,7 @@ function App() {
      <Routes>
             <Route path="/"  element={<LandingPage/>} />
             <Route path="/ProductPage"  element={<Product/>} />
-            <Route path="/test"  element={<ProductCard/>} />
+            <Route path="/Cart"  element={<Cart/>} />
        </Routes> 
        </div>
   );
