@@ -32,7 +32,7 @@ export default function ProductCard() {
              </div>
              <div className="btn-card-details">
              {cart.some(p=>p.id===item.id)?
-             (<button onClick={()=>dispatch({type:"DELETE_FROM_CART",payload:item})}className="btn-primary btn-outline-secondary btn-card">Remove</button>):
+             (<button onClick={()=>dispatch({type:"DELETE_FROM_CART",payload:item})}className="btn-primary btn-outline-secondary btn-card">Remove from cart</button>):
 
              (<button onClick={()=>dispatch({type:"ADD_TO_CART",payload:item})}className="btn-primary btn-outline-primary btn-card">Add to cart</button>)}
             
@@ -41,7 +41,7 @@ export default function ProductCard() {
               <button onClick={()=>wishDispatch({type:"DELETE_FROM_WISHLIST",payload:item})}className="btn-primary btn-outline-secondary btn-card">Remove from Wishlist</button>
             )
             :(
-            <button onClick={()=>wishDispatch({type:"ADD_TO_WISHLIST",payload:item})}className="btn-primary btn-outline-secondary btn-card">Move to Wishlist</button>
+            <button onClick={()=>wishDispatch({type:"ADD_TO_WISHLIST",payload:item})}className="btn-primary btn-outline-primary btn-card">Move to Wishlist</button>
             )
             }
                {/* <button className="btn-primary btn-outline-secondary btn-card btn-icon"><i
