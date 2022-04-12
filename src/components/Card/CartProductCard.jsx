@@ -1,8 +1,9 @@
 import React  from 'react'
 import { useCart } from '../../context/cartContext'
+import { useWishlist } from '../../context/wishlistContext';
 export default function CartProductCard() {
 const {state:{cart},dispatch}=useCart();
-console.log(cart)
+const {wishlistState:{wishlist},wishDispatch}=useWishlist();
 return (
 
 <div className="ec-product-card-cart">
@@ -36,7 +37,9 @@ return (
                 <div className="btn-card-details btn-card-cart">
                     <button onClick={()=>dispatch({type:"DELETE_FROM_CART",payload:item})}
                     className="btn-primary btn-outline-primary btn-card">Remove from cart</button>
-                    <button className="btn-primary btn-outline-secondary btn-card">Add to wishlist</button>
+                {wishlist.some(p=>p.id===item.id)?
+                (<button disabled={true} className="btn-primary btn-outline-secondary btn-card">Wishlisted!</button>)
+                :(<button onClick={()=>{dispatch({type:"DELETE_FROM_CART",payload:item});wishDispatch({type:"ADD_TO_WISHLIST",payload:item})}} className="btn-primary btn-outline-secondary btn-card">Add to wishlist</button>)}
                 </div>
             </div>
         </div>
