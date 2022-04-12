@@ -11,7 +11,7 @@ export default function NavigationTop(){
                 <nav className="ec-navbar">
                     <ul className="ec-nav-link">
                         <li><input className="input-box-basic ec-input" placeholder="Looking for something ?" type="text" />
-                            <label for="Email"></label></li>
+                            <label htmlFor="Email"></label></li>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/ProductPage'>Product</Link></li>
                         <li><Link to='/'>Login/Signup</Link></li>

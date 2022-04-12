@@ -1,9 +1,10 @@
   function getSortedData(productList, sortBy) {
+    let temp=productList;
     if (sortBy === "HIGH_TO_LOW")
-      return productList.sort((a, b) => b.price - a.price);
+      return temp.sort((a, b) => b.price - a.price);
     if (sortBy === "LOW_TO_HIGH")
-      return productList.sort((a, b) => a.price - b.price);
-    return productList;
+      return temp.sort((a, b) => a.price - b.price);
+    return temp;
   }
   function getFilteredData(
     productList,
@@ -28,5 +29,13 @@ function getRatings(productList,state){
     return productList.filter((item) => item.ratings >=2&& item.ratings <= 5);
   else return productList;
 }
-
- export {getSortedData,getFilteredData,getPriceRange,getRatings}
+function getCategory (productList, state) {
+   
+    const categoryArray = state.showCategory;
+    return categoryArray.length === 0
+    ? productList
+    : [...productList].filter((product) =>
+    categoryArray.some((brandName) => brandName === product.category)
+      );
+};
+ export {getSortedData,getFilteredData,getPriceRange,getRatings,getCategory}
