@@ -11,10 +11,10 @@ const [total,setTotal]= useState(0);
 const [discount,setDiscount]=useState(0);
 
 useEffect(()=>{
-    setPrice(cart.reduce((acc,current)=>acc+Number(current.originalPrice),0));
-    setTotal(cart.reduce((acc,current)=>acc+Number(current.price),300));
-    setDiscount(cart.reduce((acc,current)=>acc+(Number(current.originalPrice)-Number(current.price)),0))}
-    ,[cart]
+setPrice(cart.reduce((acc,current)=>acc+Number(current.originalPrice)*current.qty,0));
+setTotal(cart.reduce((acc,current)=>acc+Number((current.price)*current.qty),300));
+setDiscount(cart.reduce((acc,current)=>acc+(Number((current.originalPrice)*current.qty)-Number((current.price)*current.qty)),0))}
+,[cart]
 )
 
 return (
@@ -22,7 +22,7 @@ return (
     <NavigationTop />
     <div className="h3 center-text ec-head-text">My Cart!</div>
     <div className="ec-cart-container">
-            <CartProductCard />
+        <CartProductCard />
         <div className="ec-product-total">
             <div className="ec-bill-container">
                 <div className="h2">Price Details</div>

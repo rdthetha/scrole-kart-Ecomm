@@ -2,7 +2,7 @@ import React  from 'react'
 import { useCart } from '../../context/cartContext'
 export default function CartProductCard() {
 const {state:{cart},dispatch}=useCart();
-
+console.log(cart)
 return (
 
 <div className="ec-product-card-cart">
@@ -16,7 +16,6 @@ return (
             <div className="card-details">
                 <div className="name">{item.Brand}</div>
                 <div className="ec-price-detail">
-                    {/* <div className="italic-text h5">Price :&nbsp;</div> */}
                     <div className="h6">Rs&nbsp;</div>
                     <div className="omit-text h6">{item.originalPrice}</div>
                     <div className="h5">&nbsp;{item.price}</div>
@@ -24,11 +23,15 @@ return (
                 </div>
                 <div className="small-text">Quantity: </div>
                 <div className="ec-product-quantity">
-
-                    {/* <button className="ec-price-btn ec-minus">-</button>
-                    <h2 className="ec-price-counter">0</h2>
-                    <button className="ec-price-btn ec-plus">+</button> */}
-                    
+                    <button 
+                    onClick={()=>dispatch({type:"REDUCE_QUANTITY",payload:{id:item.id,qty:item.qty}})}
+                    className="ec-price-btn ec-minus">-</button>
+                    <div value={item.qty} 
+                    onChange={(e)=>dispatch({type:"CHANGE_QUANTITY",payload:{id:item.id,qty:e.target.value}})} 
+                    className=" h6 ec-price-counter">{item.qty}</div>
+                    <button 
+                    onClick={()=>dispatch({type:"ADD_QUANTITY",payload:{id:item.id,qty:item.qty}})}
+                    className="ec-price-btn ec-plus">+</button> 
                 </div>
                 <div className="btn-card-details btn-card-cart">
                     <button onClick={()=>dispatch({type:"DELETE_FROM_CART",payload:item})}
