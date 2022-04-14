@@ -8,7 +8,7 @@ const {wishlistState:{wishlist},wishDispatch}=useWishlist();
 return (
 
 <div className="ec-product-card-cart">
-    {cart.length===0 && <div className='h3'>Add items to cart!!</div>}
+    {cart.length===0 && <div className='h2'>Cart is Empty!</div>}
     {cart.map((item)=>
     <div className="card-container-horizontal">
         <div className="img-contain">

@@ -14,7 +14,8 @@ setDiscount(cart.reduce((acc,current)=>acc+(Number((current.originalPrice)*curre
 ,[cart]
 )
   return (
-    <div className="ec-product-total">
+    <>
+        {cart.length!==0 && <div className="ec-product-total">
             <div className="ec-bill-container">
                 <div className="h2">Price Details</div>
                 <hr />
@@ -43,7 +44,8 @@ setDiscount(cart.reduce((acc,current)=>acc+(Number((current.originalPrice)*curre
                     <button className="btn-primary btn-outline-secondary btn-card">Place Order</button>
                 </div>
             </div>
-        </div>
-    
+        </div>}
+    </>
+
   )
 }

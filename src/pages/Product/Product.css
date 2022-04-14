@@ -10,6 +10,10 @@
     background-color: var(--ec-secondary-background);
 
 }
+.ec-navbar-wrapper{
+
+    width: 100%;
+}
 
 /*SLIDER CSS */
 
@@ -161,4 +165,16 @@
 .category-label{
 
     display: block;
+}
+
+.error-page-logo{
+
+    width: 15rem;
+    height: 15rem;
+}
+
+.error-page-div{
+
+    text-align: center;
+
 }
