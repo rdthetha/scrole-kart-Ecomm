@@ -1,9 +1,23 @@
-import React, { createContext, useContext, useReducer } from "react";
-import { DataTest } from "../data";
+import React, { createContext, useState,useContext, useReducer ,useEffect} from "react";
+import axios from "axios";
 import {getSortedData,getFilteredData,getPriceRange,getRatings,getCategory} from '../utility.js'
 const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+        try {
+            const response = await axios.get("/api/products");
+            setData(response.data.products);
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+    fetchData();} , []);
+    console.log(data)
     function ReducerManage(state, action) {
         switch (action.type) {
             case "SORT":
@@ -46,7 +60,7 @@ const [state, dispatch] = useReducer(
     }
   );
 const { showInventoryAll, showFastDelivery,sortBy }=state;
-const sortedData = getSortedData(DataTest, sortBy);
+const sortedData = getSortedData(data, sortBy);
 const optionData = getFilteredData(sortedData, {
     showFastDelivery,
     showInventoryAll
@@ -63,4 +77,4 @@ const filteredData=getCategory(ratingData,state)
 
 const useProduct = () => useContext(ProductContext);
 
-export { useProduct, ProductContext, ProductProvider };
+export { useProduct, ProductProvider };

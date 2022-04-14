@@ -4,8 +4,7 @@ import Cart from './pages/Cart/Cart';
 import LandingPage from './pages/Home/LandingPage';
 import Product from './pages/Product/Product';
 import Wishlist from './pages/Wishlist/Wishlist';
-
-
+import PageNotFound from './pages/PageNotFound';
 function App() {
   return (
     <div className="App">
@@ -14,6 +13,7 @@ function App() {
             <Route path="/ProductPage"  element={<Product/>} />
             <Route path="/Cart"  element={<Cart/>} />
             <Route path="/Wishlist"  element={<Wishlist/>} />
+            <Route path="*" element={ <PageNotFound/>}/>
        </Routes> 
     </div>
   );

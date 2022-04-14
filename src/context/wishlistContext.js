@@ -1,10 +1,22 @@
-import React ,{createContext,useContext, useReducer} from 'react'
-import { DataTest } from '../data';
+import React ,{createContext,useContext, useReducer,useState,useEffect} from 'react'
+import axios from 'axios';
 
 const WishlistContext=createContext();
 
 const WishlistProvider=({children})=>{
 
+    const [data, setData] = useState([]);
+    useEffect(() => {
+    async function fetchData() {
+        try {
+            const response = await axios.get("/api/products");
+            setData(response.data.products);
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+    fetchData();} , []);
     const WishlistReducer=(state,action)=>{
 
         switch(action.type){
@@ -18,7 +30,7 @@ const WishlistProvider=({children})=>{
         }
     }
 
-    const [wishlistState,wishDispatch]=useReducer(WishlistReducer,{products: DataTest,wishlist:[]})
+    const [wishlistState,wishDispatch]=useReducer(WishlistReducer,{products: data,wishlist:[]})
 
     return(
         <WishlistContext.Provider value={{wishlistState,wishDispatch}}>

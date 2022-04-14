@@ -7,7 +7,9 @@ import { ProductProvider } from './context/filterContext';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './context/cartContext';
 import { WishlistProvider } from './context/wishlistContext';
+import { makeServer } from "./server";
 
+makeServer();
 ReactDOM.render(
 
   <React.StrictMode>
