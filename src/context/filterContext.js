@@ -1,5 +1,6 @@
 import React, { createContext, useState,useContext, useReducer ,useEffect} from "react";
 import axios from "axios";
+import {FilterReducer} from '../Reducer/reducerAll'
 import {getSortedData,getFilteredData,getPriceRange,getRatings,getCategory} from '../utility.js'
 const ProductContext = createContext();
 
@@ -17,39 +18,9 @@ const ProductProvider = ({ children }) => {
         }
     }
     fetchData();} , []);
-    console.log(data)
-    function ReducerManage(state, action) {
-        switch (action.type) {
-            case "SORT":
-                return { ...state, sortBy: action.payload };
-            case "FILTER_BY_PRICE":
-                return { ...state, showPrice: action.payload };
-            case "FILTER_BY_RATING":
-                  return { ...state, showRating: action.payload };
-            case "TOGGLE_INVENTORY":
-                return { ...state, showInventoryAll: !state.showInventoryAll };
-            case "TOGGLE_DELIVERY":
-                return { ...state, showFastDelivery: !state.showFastDelivery };
-            case "ADD_CATEGORY":
-                return {...state,showCategory:[...state.showCategory,action.payload]};
-            case "DELETE_CATEGORY":
-                return {...state,showCategory:state.showCategory.filter((category)=>category!==action.payload)};
-            case "FILTER_CLEAR":
-                return {
-                  showInventoryAll: true,
-                  showFastDelivery: false,
-                  showCategory: [],
-                  showPrice:0,
-                  showRating:null,
-                  sortBy: null
-                }
-            default:
-                return state;
-        }
-    }
-
+    
 const [state, dispatch] = useReducer(
-    ReducerManage,
+    FilterReducer,
     {
       showInventoryAll: true,
       showFastDelivery: false,

@@ -1,10 +1,6 @@
 import React from 'react';
 import {Route,Routes } from 'react-router-dom';
-import Cart from './pages/Cart/Cart';
-import LandingPage from './pages/Home/LandingPage';
-import Product from './pages/Product/Product';
-import Wishlist from './pages/Wishlist/Wishlist';
-import PageNotFound from './pages/PageNotFound';
+import {LandingPage,Product,Wishlist,Cart,PageNotFound} from './pages/pagesAll'
 function App() {
   return (
     <div className="App">

@@ -1,6 +1,6 @@
 import React ,{createContext,useContext, useReducer,useState,useEffect} from 'react'
 import axios from 'axios';
-
+import {WishlistReducer} from '../Reducer/reducerAll'
 const WishlistContext=createContext();
 
 const WishlistProvider=({children})=>{
@@ -17,21 +17,8 @@ const WishlistProvider=({children})=>{
         }
     }
     fetchData();} , []);
-    const WishlistReducer=(state,action)=>{
-
-        switch(action.type){
-
-            case"ADD_TO_WISHLIST": 
-            return{...state,wishlist:[...state.wishlist,action.payload]};
-            case"DELETE_FROM_WISHLIST":
-            return{...state,wishlist:state.wishlist
-                .filter((c)=>c.id!==action.payload.id)};
-            default:return state;
-        }
-    }
 
     const [wishlistState,wishDispatch]=useReducer(WishlistReducer,{products: data,wishlist:[]})
-
     return(
         <WishlistContext.Provider value={{wishlistState,wishDispatch}}>
             {children}
