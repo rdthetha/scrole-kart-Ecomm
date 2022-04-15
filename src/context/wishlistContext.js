@@ -1,9 +1,9 @@
 import React ,{createContext,useContext, useReducer,useState,useEffect} from 'react'
 import axios from 'axios';
-import {CartReducer} from '../Reducer/reducerAll'
-const CartContext= createContext();
+import {WishlistReducer} from '../Reducer/reducerAll'
+const WishlistContext=createContext();
 
-const CartProvider=({children})=>{
+const WishlistProvider=({children})=>{
 
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -18,14 +18,15 @@ const CartProvider=({children})=>{
     }
     fetchData();} , []);
 
-    const [state,dispatch]=useReducer(CartReducer,{products: data,cart:[]})
-
-    return (
-        <CartContext.Provider value={{state,dispatch}}>
+    const [wishlistState,wishDispatch]=useReducer(WishlistReducer,{products: data,wishlist:[]})
+    return(
+        <WishlistContext.Provider value={{wishlistState,wishDispatch}}>
             {children}
-        </CartContext.Provider>
+        </WishlistContext.Provider>
     )
-}
-const useCart = () => useContext(CartContext);
 
-export { useCart, CartContext, CartProvider };
+}
+
+const useWishlist=()=>useContext(WishlistContext)
+
+export{useWishlist,WishlistProvider,WishlistContext};

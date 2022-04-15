@@ -10,6 +10,10 @@
     background-color: var(--ec-secondary-background);
 
 }
+.ec-navbar-wrapper{
+
+    width: 100%;
+}
 
 /*SLIDER CSS */
 
@@ -96,14 +100,14 @@
 
     display: flex;
     flex-direction: column;
-    height: 32rem;
+    height: 29rem;
     min-width: 20rem;
     background-color: var(--ec-secondary-background);
 }
 
 .img-contain>img {
 
-    height: 15rem;
+    height: 11rem;
 }
 
 .btn-icon {
@@ -148,10 +152,29 @@
     color: var(--primary-dark-red);
 }
 
+.btn-card-details {
 
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-card {
+     margin:0.5rem 0rem 0rem;
+}
 .category-label{
 
     display: block;
+}
+
+.error-page-logo{
+
+    width: 15rem;
+    height: 15rem;
+}
+
+.error-page-div{
+
+    text-align: center;
+
 }

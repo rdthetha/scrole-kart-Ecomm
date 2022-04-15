@@ -1,0 +1,27 @@
+.ec-wishlist-content>.card-container{
+
+    min-width: 22rem;
+    height: 26rem;
+}
+
+.img-contain>img{
+
+    width: 13rem;
+}
+
+.ec-wishlist-content{
+
+    display: flex;
+   flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.btn-cross{
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border: none;
+}

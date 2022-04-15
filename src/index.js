@@ -6,16 +6,21 @@ import App from './App';
 import { ProductProvider } from './context/filterContext';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './context/cartContext';
+import { WishlistProvider } from './context/wishlistContext';
+import { makeServer } from "./server";
 
+makeServer();
 ReactDOM.render(
 
   <React.StrictMode>
     <BrowserRouter>
+    <WishlistProvider>
     <CartProvider>
     <ProductProvider>
     <App />
     </ProductProvider>
     </CartProvider>
+    </WishlistProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -204,3 +204,23 @@ a {
 
     margin-top: 1rem;
 }
+.card-container-horizontal-landing {
+    max-height: 15rem;
+    max-width: 40rem;
+    box-shadow: rgb(0 0 0 / 35%) 0rem 0.2rem 1.2rem;
+    border-radius: 1rem;
+    background-color: var(--primary-compliment);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: center;
+    position: relative;
+}
+.card-container-horizontal-landing .img-contain>img {
+    width: 95%;
+    height: 100%;
+    border-radius: 1rem 0rem 0rem 1rem;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+}
