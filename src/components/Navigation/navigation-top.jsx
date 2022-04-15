@@ -23,7 +23,7 @@ return(
                     <Link to='/ProductPage'>Product</Link>
                 </li>
                 <li>
-                    <Link to='/'>Login/Signup</Link>
+                    <Link to='/Login'>Login/Signup</Link>
                 </li>
                 <li>
                     <Link className="cart-icons" to='/Cart'><i className="fa-solid fa-cart-shopping"></i></Link>

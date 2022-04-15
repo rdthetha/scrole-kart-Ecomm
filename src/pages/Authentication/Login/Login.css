@@ -1,0 +1,69 @@
+.ec-login-wrapper {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ec-login-form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+    padding: 1rem;
+    background-color: var(--ec-secondary-background);
+    border-radius: 1rem;
+}
+
+.ec-navbar-wrapper {
+
+    margin-bottom: 0;
+}
+
+.login-input {
+
+    margin: 1rem 0rem 2rem 0rem;
+}
+
+.login-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-text-head {
+
+    margin-bottom: 1rem;
+}
+
+.login-remember {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-remember-text {
+
+    margin-top: 0;
+    color: blue;
+}
+
+.footer-container {
+
+    background-color: var(--primary-white);
+}
+
+.login-forgot-text {
+
+    color: blue;
+    margin-bottom: 1rem;
+}
+
+.underline-text{
+
+    margin-top: 1rem;
+}
